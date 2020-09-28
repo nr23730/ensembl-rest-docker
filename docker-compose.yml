@@ -1,0 +1,9 @@
+version: '3'
+services:
+  ensembl:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./ensembl_rest.config:/opt/vep/src/ensembl-rest/ensembl_rest.config:ro
